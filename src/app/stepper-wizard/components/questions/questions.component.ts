@@ -21,7 +21,7 @@ export class QuestionsComponent implements OnInit {
 
   initialize = () => {
     this.symptoms = {
-      "category": "Musculoskeletal Symptoms",
+      "symptom1": "Musculoskeletal Symptoms",
       "musculoskeletalCategories": [
         {
           "id": 1,
@@ -91,6 +91,7 @@ export class QuestionsComponent implements OnInit {
           "subText": 'since when?'
         }
       ],
+      "symptom2": "Skeletal Symptoms",
       "skeletalCategories": [
         {
           "id": 5,
