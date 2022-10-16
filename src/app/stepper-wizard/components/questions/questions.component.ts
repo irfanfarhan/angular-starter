@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-questions',
@@ -7,6 +7,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class QuestionsComponent implements OnInit {
   @Output() submitEvent: EventEmitter<any> = new EventEmitter();
+  @Input() finalData: any;
   constructor() { }
 
   ngOnInit(): void {
@@ -17,7 +18,7 @@ export class QuestionsComponent implements OnInit {
       isStep1: 'complete',
       isStep2: 'complete',
       isStep3: 'active',
-      formData: {}
+      formData: this.finalData?.formData
     })
   }
 
@@ -26,7 +27,7 @@ export class QuestionsComponent implements OnInit {
       isStep1: 'active',
       isStep2: '',
       isStep3: '',
-      formData: {}
+      formData: this.finalData?.formData
     })
   }
 }

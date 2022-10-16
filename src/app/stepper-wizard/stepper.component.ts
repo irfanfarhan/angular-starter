@@ -14,6 +14,7 @@ export class StepperComponent implements OnInit {
   isStep1: string = 'active';
   isStep2: string = '';
   isStep3: string = '';
+  finalData: any;
   constructor(private route: ActivatedRoute,
     private router: Router) {
   }
@@ -27,6 +28,7 @@ export class StepperComponent implements OnInit {
     this.isStep2 = event?.isStep2;
     this.isStep3 = event?.isStep3;
     console.log(event?.formData);
+    this.finalData = event;
   }
   
   submitData = () => {
