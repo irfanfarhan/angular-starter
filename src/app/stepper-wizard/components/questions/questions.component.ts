@@ -64,7 +64,7 @@ export class QuestionsComponent implements OnInit {
           "category": "Fatigue",
           "q1": "Q14",
           "q1text": "Do you experience difficulty in one or more of these activities?",
-          "q1cde": "Q15",
+          "q2": "Q15",
           "q2text": "If you have answered this question 'Yes', since when?",
           "q1val": "",
           "q2val": "",
@@ -109,14 +109,70 @@ export class QuestionsComponent implements OnInit {
   }
 
   submit = () => {
+    this.dataFormat();
+  }
+
+
+  dataFormat = () => {
+    const data = {
+      "type": "Symptoms",
+      "categories": [
+        {
+          "category": this.symptoms?.symptom1,
+          "subCategories": this.getSubCategories(this.symptoms?.musculoskeletalCategories)
+        },
+        {
+          "category": this.symptoms?.symptom2,
+          "qstnset": this.getQstnset(this.symptoms?.skeletalCategories)
+        }
+      ]
+    }
+    console.log(data);
     this.submitEvent.emit({
       isStep1: 'complete',
       isStep2: 'complete',
       isStep3: 'active',
       formData: this.finalData?.formData
-    })
+    });
   }
 
+  getSubCategories = (data: any) => {
+    let subCategories: any = [];
+    if (data?.length > 0) {
+      for (let item of data) {
+        subCategories.push({
+          "category": item?.category,
+          "qstnset": [
+            {
+              "cde": item?.q1,
+              "text": item?.q1text,
+              "val": item?.q1val
+            },
+            {
+              "cde": item?.q2,
+              "text": item?.q2text,
+              "val": item?.q2val
+            }
+          ]
+        })
+      }
+    }
+    return subCategories;
+  }
+
+  getQstnset = (data: any) => {
+    let qstnset: any = [];
+    if (data?.length > 0) {
+      for (let item of data) {
+        qstnset.push({
+          "cde": item?.q1,
+          "text": item?.q1text,
+          "val": item?.q1val
+        })
+      }
+    }
+    return qstnset;
+  }
   back = () => {
     this.submitEvent.emit({
       isStep1: 'active',
