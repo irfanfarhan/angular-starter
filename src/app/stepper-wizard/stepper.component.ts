@@ -9,8 +9,8 @@ import { Router } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class StepperComponent implements OnInit {
-  isStep1: string = 'active';
-  isStep2: string = '';
+  isStep1: string = '';
+  isStep2: string = 'active';
   isStep3: string = '';
   finalData: any;
   constructor(private router: Router) {

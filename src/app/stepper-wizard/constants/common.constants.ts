@@ -1946,3 +1946,21 @@ export const PHONEEXTN = [
         "name": "Zimbabwe"
     }
 ];
+
+export const YESNO = [
+    {
+        "text": "Yes",
+        "val": "Y"
+    },
+    {
+        "text": "No",
+        "val": "N"
+    }
+];
+
+export const CRITERIALIST = [
+    '<6 months',
+    '6 months - 1 year',
+    '1 - 5 years',
+    '>5 years'
+];

@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { CRITERIALIST, YESNO } from '../../constants/common.constants';
 
 @Component({
   selector: 'app-questions',
@@ -9,7 +10,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class QuestionsComponent implements OnInit {
   @Output() submitEvent: EventEmitter<any> = new EventEmitter();
   @Input() finalData: any;
-  questionsForm: FormGroup = this.fb.group({});
+  symptoms: any;
+  yesNoList: any = YESNO;
+  criteriaList: any = CRITERIALIST;
   constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
@@ -17,24 +20,91 @@ export class QuestionsComponent implements OnInit {
   }
 
   initialize = () => {
-    this.questionsForm = this.fb.group({
-      name: ['', Validators.required],
-      gender: ['', Validators.required],
-      email: ['', Validators.required],
-      ethncty: ['', Validators.required],
-      dob: ['', Validators.required],
-      hcPrvdr: ['', Validators.required],
-      cntryOfResdnc: ['', Validators.required],
-      mobileExtn: ['', Validators.required],
-      mobile: ['', Validators.required]
-    });
-    // if (this.finalData?.formData) {
-    //   this.questionsForm.setValue(this.finalData?.formData);
-    // }
-  }
-
-  get form() {
-    return this.questionsForm?.controls;
+    this.symptoms = {
+      "category": "Musculoskeletal Symptoms",
+      "musculoskeletalCategories": [
+        {
+          "id": 1,
+          "category": "Dyspnea during excercise",
+          "q1": "Q1",
+          "q1text": "Do you experience extreme fatigue/intolerence while exercising?",
+          "q2": "Q2",
+          "q2text": "If you have answered this question 'Yes', since when?",
+          "q1val": "",
+          "q2val": "",
+          "list": [],
+          "subText": 'since when?'
+        },
+        {
+          "id": 2,
+          "category": "Myalgia",
+          "q1": "Q3",
+          "q1text": "Do you experience frequent muscle pain or muscle cramps?",
+          "q2": "Q4",
+          "q2text": "If you have answered this question 'Yes', since when?",
+          "q1val": "",
+          "q2val": "",
+          "list": [],
+          "subText": 'since when?'
+        },
+        {
+          "id": 3,
+          "category": "Myalgia",
+          "q1": "Q6",
+          "q1text": "Do you often experience weakness in arms and legs?",
+          "q2": "Q6",
+          "q2text": "If you have answered this question 'Yes', since when?",
+          "q1val": "",
+          "q2val": "",
+          "list": [],
+          "subText": 'since when?'
+        },
+        {
+          "id": 4,
+          "category": "Fatigue",
+          "q1": "Q14",
+          "q1text": "Do you experience difficulty in one or more of these activities?",
+          "q1cde": "Q15",
+          "q2text": "If you have answered this question 'Yes', since when?",
+          "q1val": "",
+          "q2val": "",
+          "list": [
+            {
+              title: 'Running',
+              checked: false,
+            }, {
+              title: 'Walking',
+              checked: false,
+            },
+            {
+              title: 'Climbing Stairs',
+              checked: false,
+            },
+            {
+              title: 'Rising from a chair',
+              checked: false,
+            },
+            {
+              title: 'Imbalance while sitting',
+              checked: false,
+            }],
+          "subText": 'since when?'
+        }
+      ],
+      "skeletalCategories": [
+        {
+          "id": 5,
+          "category": "",
+          "q1": "Q43",
+          "q1text": "Are you prone to fractures?",
+          "q2": "Q44",
+          "q2text": "If you have answered this question 'Yes', since when?",
+          "q1val": "",
+          "q2val": "",
+          "subText": 'how many in past 1 years?'
+        }
+      ]
+    };
   }
 
   submit = () => {
