@@ -1,8 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
-import { COUNTRYLIST, GENDERLIST } from './constants/common.constants';
 
 @Component({
   selector: 'app-stepper',
@@ -15,8 +13,7 @@ export class StepperComponent implements OnInit {
   isStep2: string = '';
   isStep3: string = '';
   finalData: any;
-  constructor(private route: ActivatedRoute,
-    private router: Router) {
+  constructor(private router: Router) {
   }
 
   ngOnInit() {

@@ -1,208 +1,207 @@
-<div class="card mb-5">
-    <div class="card-body">
-        <label for="exampleFormControlInput1" class="form-label">QUESTION 1</label>
-        <h4>Do you experience extreme fatigue/intolerence while exercising?</h4>
-        <div class="mb-3">
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                    value="option1">
-                <label class="form-check-label" for="inlineRadio1">Yes</label>
+<form [formGroup]="questionsForm" rule="form" novalidate>
+    <div class="card mb-5">
+        <div class="card-body">
+            <label for="exampleFormControlInput1" class="form-label">QUESTION 1</label>
+            <h4>Do you experience extreme fatigue/intolerence while exercising?</h4>
+            <div class="mb-3">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                        value="option1">
+                    <label class="form-check-label" for="inlineRadio1">Yes</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                        value="option2">
+                    <label class="form-check-label" for="inlineRadio2">No</label>
+                </div>
             </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-                    value="option2">
-                <label class="form-check-label" for="inlineRadio2">No</label>
-            </div>
-        </div>
-        <div class="mb-3 w-50">
-            <label for="name" class="form-label">since when?</label>
-            <select class="form-select" aria-label=".form-select-lg example">
-                <option selected>6months - 1year</option>
-                <option value="6months - 1year">6months - 1year</option>
-            </select>
-        </div>
-    </div>
-</div>
-<div class="card mb-5">
-    <div class="card-body">
-        <label for="exampleFormControlInput1" class="form-label">QUESTION 2</label>
-        <h4>Do you often experience weakness in arms and legs?</h4>
-        <div class="mb-3">
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                    value="option1">
-                <label class="form-check-label" for="inlineRadio1">Yes</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-                    value="option2">
-                <label class="form-check-label" for="inlineRadio2">No</label>
-            </div>
-        </div>
-        <div class="mb-3 w-50">
-            <label for="name" class="form-label">since when?</label>
-            <select class="form-select" aria-label=".form-select-lg example">
-                <option selected>6months - 1year</option>
-                <option value="6months - 1year">6months - 1year</option>
-            </select>
-        </div>
-        <div class="mb-3">
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                <label class="form-check-label" for="inlineCheckbox1">Shoulders</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                <label class="form-check-label" for="inlineCheckbox2">Upper arms</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                <label class="form-check-label" for="inlineCheckbox1">Pelvic area</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                <label class="form-check-label" for="inlineCheckbox2">Thighs</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                <label class="form-check-label" for="inlineCheckbox1">Forearm</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                <label class="form-check-label" for="inlineCheckbox2">Hand</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                <label class="form-check-label" for="inlineCheckbox1">Lower legs</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                <label class="form-check-label" for="inlineCheckbox2">Feet</label>
+            <div class="mb-3 w-50">
+                <label for="name" class="form-label">since when?</label>
+                <select class="form-select" aria-label=".form-select-lg example">
+                    <option selected>6months - 1year</option>
+                    <option value="6months - 1year">6months - 1year</option>
+                </select>
             </div>
         </div>
     </div>
-</div>
-<div class="card mb-5">
-    <div class="card-body">
-        <label for="exampleFormControlInput1" class="form-label">QUESTION 3</label>
-        <h4>Posturally, have you noticed that you have drooping shoulders or your shoulder blades are sticking
-            out?</h4>
-        <div class="mb-3">
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                    value="option1">
-                <label class="form-check-label" for="inlineRadio1">Yes</label>
+    <div class="card mb-5">
+        <div class="card-body">
+            <label for="exampleFormControlInput1" class="form-label">QUESTION 2</label>
+            <h4>Do you often experience weakness in arms and legs?</h4>
+            <div class="mb-3">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                        value="option1">
+                    <label class="form-check-label" for="inlineRadio1">Yes</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                        value="option2">
+                    <label class="form-check-label" for="inlineRadio2">No</label>
+                </div>
             </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-                    value="option2">
-                <label class="form-check-label" for="inlineRadio2">No</label>
+            <div class="mb-3 w-50">
+                <label for="name" class="form-label">since when?</label>
+                <select class="form-select" aria-label=".form-select-lg example">
+                    <option selected>6months - 1year</option>
+                    <option value="6months - 1year">6months - 1year</option>
+                </select>
             </div>
-        </div>
-        <div class="mb-3 w-50">
-            <label for="name" class="form-label">since when?</label>
-            <select class="form-select" aria-label=".form-select-lg example">
-                <option selected>6months - 1year</option>
-                <option value="6months - 1year">6months - 1year</option>
-            </select>
+            <div class="mb-3">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1">Shoulders</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                    <label class="form-check-label" for="inlineCheckbox2">Upper arms</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1">Pelvic area</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                    <label class="form-check-label" for="inlineCheckbox2">Thighs</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1">Forearm</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                    <label class="form-check-label" for="inlineCheckbox2">Hand</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1">Lower legs</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                    <label class="form-check-label" for="inlineCheckbox2">Feet</label>
+                </div>
+            </div>
         </div>
     </div>
-</div>
-<div class="card mb-5">
-    <div class="card-body">
-        <label for="exampleFormControlInput1" class="form-label">QUESTION 4</label>
-        <h4>Do you experience difficulty in one or more of these activities? </h4>
-        <div class="mb-3">
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                <label class="form-check-label" for="inlineCheckbox1">Running</label>
+    <div class="card mb-5">
+        <div class="card-body">
+            <label for="exampleFormControlInput1" class="form-label">QUESTION 3</label>
+            <h4>Posturally, have you noticed that you have drooping shoulders or your shoulder blades are sticking
+                out?</h4>
+            <div class="mb-3">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                        value="option1">
+                    <label class="form-check-label" for="inlineRadio1">Yes</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                        value="option2">
+                    <label class="form-check-label" for="inlineRadio2">No</label>
+                </div>
             </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                <label class="form-check-label" for="inlineCheckbox2">Climbing stairs</label>
+            <div class="mb-3 w-50">
+                <label for="name" class="form-label">since when?</label>
+                <select class="form-select" aria-label=".form-select-lg example">
+                    <option selected>6months - 1year</option>
+                    <option value="6months - 1year">6months - 1year</option>
+                </select>
             </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                <label class="form-check-label" for="inlineCheckbox1">Rising from a chair </label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                <label class="form-check-label" for="inlineCheckbox2">Imbalance while sitting</label>
-            </div>
-        </div>
-        <div class="mb-3 w-50">
-            <label for="name" class="form-label">since when?</label>
-            <select class="form-select" aria-label=".form-select-lg example">
-                <option selected>6months - 1year</option>
-                <option value="6months - 1year">6months - 1year</option>
-            </select>
         </div>
     </div>
-</div>
-
-<div class="card mb-5">
-    <div class="card-body">
-        <label for="exampleFormControlInput1" class="form-label">QUESTION 5</label>
-        <h4>Are you prone to fractures? </h4>
-        <div class="mb-3">
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                    value="option1">
-                <label class="form-check-label" for="inlineRadio1">Yes</label>
+    <div class="card mb-5">
+        <div class="card-body">
+            <label for="exampleFormControlInput1" class="form-label">QUESTION 4</label>
+            <h4>Do you experience difficulty in one or more of these activities? </h4>
+            <div class="mb-3">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1">Running</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                    <label class="form-check-label" for="inlineCheckbox2">Climbing stairs</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1">Rising from a chair </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                    <label class="form-check-label" for="inlineCheckbox2">Imbalance while sitting</label>
+                </div>
             </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-                    value="option2">
-                <label class="form-check-label" for="inlineRadio2">No</label>
+            <div class="mb-3 w-50">
+                <label for="name" class="form-label">since when?</label>
+                <select class="form-select" aria-label=".form-select-lg example">
+                    <option selected>6months - 1year</option>
+                    <option value="6months - 1year">6months - 1year</option>
+                </select>
             </div>
-        </div>
-        <div class="mb-3 w-50">
-            <label for="name" class="form-label">how many in past 1 years?</label>
-            <select class="form-select" aria-label=".form-select-lg example">
-                <option selected>3</option>
-                <option value="3">3</option>
-            </select>
         </div>
     </div>
-</div>
-<div class="card mb-5">
-    <div class="card-body">
-        <label for="exampleFormControlInput1" class="form-label">QUESTION 6</label>
-        <h4>Do you experince burning or prickling sensation that is usually felt in the hands, arms, legs, or
-            feet? </h4>
-        <div class="mb-3">
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                    value="option1">
-                <label class="form-check-label" for="inlineRadio1">Yes</label>
+    <div class="card mb-5">
+        <div class="card-body">
+            <label for="exampleFormControlInput1" class="form-label">QUESTION 5</label>
+            <h4>Are you prone to fractures? </h4>
+            <div class="mb-3">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                        value="option1">
+                    <label class="form-check-label" for="inlineRadio1">Yes</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                        value="option2">
+                    <label class="form-check-label" for="inlineRadio2">No</label>
+                </div>
             </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-                    value="option2">
-                <label class="form-check-label" for="inlineRadio2">No</label>
+            <div class="mb-3 w-50">
+                <label for="name" class="form-label">how many in past 1 years?</label>
+                <select class="form-select" aria-label=".form-select-lg example">
+                    <option selected>3</option>
+                    <option value="3">3</option>
+                </select>
             </div>
-        </div>
-        <div class="mb-3 w-50">
-            <label for="name" class="form-label">How often do you experience these?</label>
-            <select class="form-select" aria-label=".form-select-lg example">
-                <option selected>3</option>
-                <option value="3">3</option>
-            </select>
-        </div>
-        <div class="mb-3 w-50">
-            <label for="name" class="form-label">Which time of the day?</label>
-            <select class="form-select" aria-label=".form-select-lg example">
-                <option selected>3</option>
-                <option value="3">3</option>
-            </select>
         </div>
     </div>
-</div>
-<div class="row mt-5">
-    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <button type="button" class="btn btn-outline-primary"
-            (click)="back()">Back</button>
-        <button type="button" class="btn btn-primary btn-lg custom-btn"
-            (click)="submit()">SUBMIT & PROCEED</button>
+    <div class="card mb-5">
+        <div class="card-body">
+            <label for="exampleFormControlInput1" class="form-label">QUESTION 6</label>
+            <h4>Do you experince burning or prickling sensation that is usually felt in the hands, arms, legs, or
+                feet? </h4>
+            <div class="mb-3">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                        value="option1">
+                    <label class="form-check-label" for="inlineRadio1">Yes</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                        value="option2">
+                    <label class="form-check-label" for="inlineRadio2">No</label>
+                </div>
+            </div>
+            <div class="mb-3 w-50">
+                <label for="name" class="form-label">How often do you experience these?</label>
+                <select class="form-select" aria-label=".form-select-lg example">
+                    <option selected>3</option>
+                    <option value="3">3</option>
+                </select>
+            </div>
+            <div class="mb-3 w-50">
+                <label for="name" class="form-label">Which time of the day?</label>
+                <select class="form-select" aria-label=".form-select-lg example">
+                    <option selected>3</option>
+                    <option value="3">3</option>
+                </select>
+            </div>
+        </div>
     </div>
-</div>
+    <div class="row mt-5">
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <button type="button" class="btn btn-outline-primary" (click)="back()">Back</button>
+            <button type="button" class="btn btn-primary btn-lg custom-btn" (click)="submit()">SUBMIT & PROCEED</button>
+        </div>
+    </div>
+</form>

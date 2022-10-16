@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-questions',
@@ -8,9 +9,32 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class QuestionsComponent implements OnInit {
   @Output() submitEvent: EventEmitter<any> = new EventEmitter();
   @Input() finalData: any;
-  constructor() { }
+  questionsForm: FormGroup = this.fb.group({});
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
+    this.initialize()
+  }
+
+  initialize = () => {
+    this.questionsForm = this.fb.group({
+      name: ['', Validators.required],
+      gender: ['', Validators.required],
+      email: ['', Validators.required],
+      ethncty: ['', Validators.required],
+      dob: ['', Validators.required],
+      hcPrvdr: ['', Validators.required],
+      cntryOfResdnc: ['', Validators.required],
+      mobileExtn: ['', Validators.required],
+      mobile: ['', Validators.required]
+    });
+    // if (this.finalData?.formData) {
+    //   this.questionsForm.setValue(this.finalData?.formData);
+    // }
+  }
+
+  get form() {
+    return this.questionsForm?.controls;
   }
 
   submit = () => {
