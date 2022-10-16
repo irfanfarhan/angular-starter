@@ -44,15 +44,25 @@ export class StepperComponent implements OnInit {
     return this.basicInfoForm?.controls;
   }
 
-  submit = (value: any) => {
-    this.isStep1 = value;
-    this.isStep2 = 'active';
+  submit = (step1: any, step2: any, step3: any) => {
+    this.isStep1 = step1;
+    this.isStep2 = step2;
+    this.isStep3 = step3;
     console.log(this.basicInfoForm?.getRawValue());
   }
 
-  back = (value: any) => {
-    this.isStep1 = value;
-    this.isStep2 = '';
+  back = (step1: any, step2: any, step3: any) => {
+    this.isStep1 = step1;
+    this.isStep2 = step2;
+    this.isStep3 = step3;
     console.log(this.basicInfoForm?.getRawValue());
+  }
+
+  submitData = () => {
+    this.isStep1 = '';
+    this.isStep2 = '';
+    this.isStep3 = '';
+    console.log(this.basicInfoForm?.getRawValue());
+    this.router.navigate(['/thank-you']);
   }
 }

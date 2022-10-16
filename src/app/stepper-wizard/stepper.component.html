@@ -80,7 +80,7 @@
         <div class="row mt-5">
             <div class="d-grid gap-2 col-4 mx-auto">
                 <button type="button" class="btn btn-primary btn-lg custom-btn" [disabled]="basicInfoForm.invalid"
-                    (click)="submit('complete')">SUBMIT & PROCEED</button>
+                    (click)="submit('complete', 'active', 'none')">SUBMIT & PROCEED</button>
             </div>
         </div>
     </ng-container>
@@ -287,8 +287,32 @@
         </div>
         <div class="row mt-5">
             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                <button type="button" class="btn btn-outline-primary" (click)="back('active')">Back</button>
-                <button type="button" class="btn btn-primary btn-lg custom-btn">SUBMIT & PROCEED</button>
+                <button type="button" class="btn btn-outline-primary" (click)="back('active', 'none', 'none')">Back</button>
+                <button type="button" class="btn btn-primary btn-lg custom-btn" (click)="submit('complete', 'complete', 'active')">SUBMIT & PROCEED</button>
+            </div>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="isStep3 === 'active'">
+        <div class="card mb-5">
+            <div class="card-body">
+                <h4>I have answered all questions to the best of my ability. </h4>
+                <div class="mb-3">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                            value="option1">
+                        <label class="form-check-label" for="inlineRadio1">Yes</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                            value="option2">
+                        <label class="form-check-label" for="inlineRadio2">No</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="d-grid gap-2 col-4 mx-auto">
+                <button type="button" class="btn btn-primary btn-lg custom-btn" (click)="submitData()">SUBMIT</button>
             </div>
         </div>
     </ng-container>
