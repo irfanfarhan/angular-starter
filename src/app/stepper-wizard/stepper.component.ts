@@ -14,8 +14,8 @@ export class StepperComponent implements OnInit {
   basicInfoForm: FormGroup = this.fb.group({});
   countries: any = COUNTRYLIST;
   genderList: any = GENDERLIST;
-  isStep1: string = '';
-  isStep2: string = 'active';
+  isStep1: string = 'active';
+  isStep2: string = '';
   isStep3: string = '';
   constructor(private route: ActivatedRoute,
     private router: Router,
@@ -47,6 +47,12 @@ export class StepperComponent implements OnInit {
   submit = (value: any) => {
     this.isStep1 = value;
     this.isStep2 = 'active';
+    console.log(this.basicInfoForm?.getRawValue());
+  }
+
+  back = (value: any) => {
+    this.isStep1 = value;
+    this.isStep2 = '';
     console.log(this.basicInfoForm?.getRawValue());
   }
 }
