@@ -1,81 +1,295 @@
 <div class="container my-5">
     <ul id="progressbar" class="text-center">
-        <li class="active" id="step1">
+        <li [class]="isStep1" id="step1">
             <div class="d-none d-md-block"></div>
         </li>
-        <li id="step2">
+        <li id="step2" [class]="isStep2">
             <div class="d-none d-md-block"></div>
         </li>
-        <li class="" id="step3">
+        <li [class]="isStep3" id="step3">
             <div class="d-none d-md-block"></div>
         </li>
     </ul>
 
-    <div class="card">
-        <div class="card-body">
-            <form [formGroup]="basicInfoForm" rule="form" novalidate>
-                <div class="row">
-                    <div class="col-6">
-                        <div class="mb-3">
-                            <label for="name" class="form-label">Name</label>
-                            <input type="text" class="form-control" id="name" formControlName="name"
-                                placeholder="Enter a Name">
+    <ng-container *ngIf="isStep1 === 'active'">
+        <div class="card">
+            <div class="card-body">
+                <form [formGroup]="basicInfoForm" rule="form" novalidate>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="name" formControlName="name"
+                                    placeholder="Enter a Name">
+                            </div>
+                            <div class="mb-3">
+                                <label for="gender" class="form-label">Gender</label>
+                                <select class="form-select" id="gender" formControlName="gender"
+                                    placeholder="Select a Gender">
+                                    <option value="">Select a Gender</option>
+                                    <option *ngFor="let option of genderList" [value]="option">{{option}}</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">E-mail</label>
+                                <input type="email" class="form-control" id="email" placeholder="name@example.com"
+                                    formControlName="email">
+                            </div>
+                            <div class="mb-3">
+                                <label for="ethnicity" class="form-label">Ethnicity</label>
+                                <select class="form-select" id="ethnicity" formControlName="ethnicity"
+                                    placeholder="Select a Ethnicity">
+                                    <option value="">Select a Ethnicity</option>
+                                    <option value="Asian American">Asian American</option>
+                                </select>
+                            </div>
                         </div>
-                        <div class="mb-3">
-                            <label for="gender" class="form-label">Gender</label>
-                            <select class="form-select" id="gender" formControlName="gender"
-                                placeholder="Select a Gender">
-                                <option value="">Select a Gender</option>
-                                <option *ngFor="let option of genderList" [value]="option">{{option}}</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">E-mail</label>
-                            <input type="email" class="form-control" id="email" placeholder="name@example.com"
-                                formControlName="email">
-                        </div>
-                        <div class="mb-3">
-                            <label for="ethnicity" class="form-label">Ethnicity</label>
-                            <select class="form-select" id="ethnicity" formControlName="ethnicity"
-                                placeholder="Select a Ethnicity">
-                                <option value="">Select a Ethnicity</option>
-                                <option value="Asian American">Asian American</option>
-                            </select>
+                        <div class="col-6">
+                            <div class="mb-3">
+                                <label for="dob" class="form-label">Date of birth(mm/dd/yyyy)</label>
+                                <input type="date" class="form-control" id="dob" formControlName="dob">
+                            </div>
+                            <div class="mb-3">
+                                <label for="healthcareprovider" class="form-label">Healthcare provider</label>
+                                <input type="text" class="form-control" id="healthcareprovider"
+                                    formControlName="healthcareprovider" placeholder="Enter a Healthcare provider">
+                            </div>
+                            <label for="mobile" class="form-label">Mobile</label>
+                            <div class="input-group mb-3">
+                                <select class="form-select" id="mobile" formControlName="mobileExtn">
+                                    <option value="">+1</option>
+                                    <option value="+91">+91</option>
+                                </select>
+                                <input type="text" class="form-control" placeholder="8547123655"
+                                    formControlName="mobile">
+                            </div>
+                            <div class="mb-3">
+                                <label for="country" class="form-label">Country of Residence</label>
+                                <select class="form-select" id="country" formControlName="country"
+                                    placeholder="Select a Country of Residence">
+                                    <option value="">Select a Country of Residence</option>
+                                    <option *ngFor="let option of countries" [value]="option?.code">{{option?.name}}
+                                    </option>
+                                </select>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-6">
-                        <div class="mb-3">
-                            <label for="dob" class="form-label">Date of birth(mm/dd/yyyy)</label>
-                            <input type="date" class="form-control" id="dob" formControlName="dob">
-                        </div>
-                        <div class="mb-3">
-                            <label for="healthcareprovider" class="form-label">Healthcare provider</label>
-                            <input type="text" class="form-control" id="healthcareprovider"
-                                formControlName="healthcareprovider" placeholder="Enter a Healthcare provider">
-                        </div>
-                        <label for="mobile" class="form-label">Mobile</label>
-                        <div class="input-group mb-3">
-                            <span class="input-group-text" id="mobile">+1</span>
-                            <input type="text" class="form-control" placeholder="8547123655" formControlName="month">
-                        </div>
-                        <div class="mb-3">
-                            <label for="country" class="form-label">Country of Residence</label>
-                            <select class="form-select" id="country" formControlName="country"
-                                placeholder="Select a Country of Residence">
-                                <option value="">Select a Country of Residence</option>
-                                <option *ngFor="let option of countries" [value]="option?.code">{{option?.name}}
-                                </option>
-                            </select>
-                        </div>
+                </form>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="d-grid gap-2 col-4 mx-auto">
+                <button type="button" class="btn btn-primary btn-lg custom-btn" [disabled]="basicInfoForm.invalid"
+                    (click)="submit('complete')">SUBMIT & PROCEED</button>
+            </div>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="isStep2 === 'active'">
+        <div class="card mb-5">
+            <div class="card-body">
+                <label for="exampleFormControlInput1" class="form-label">QUESTION 1</label>
+                <h4>Do you experience extreme fatigue/intolerence while exercising?</h4>
+                <div class="mb-3">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                            value="option1">
+                        <label class="form-check-label" for="inlineRadio1">Yes</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                            value="option2">
+                        <label class="form-check-label" for="inlineRadio2">No</label>
                     </div>
                 </div>
-            </form>
+                <div class="mb-3 w-50">
+                    <label for="name" class="form-label">since when?</label>
+                    <select class="form-select" aria-label=".form-select-lg example">
+                        <option selected>6months - 1year</option>
+                        <option value="6months - 1year">6months - 1year</option>
+                    </select>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="row mt-5">
-        <div class="d-grid gap-2 col-4 mx-auto">
-            <button type="button" class="btn btn-primary btn-lg custom-btn" [disabled]="basicInfoForm.invalid"
-                (click)="submit()">SUBMIT & PROCEED</button>
+        <div class="card mb-5">
+            <div class="card-body">
+                <label for="exampleFormControlInput1" class="form-label">QUESTION 2</label>
+                <h4>Do you often experience weakness in arms and legs?</h4>
+                <div class="mb-3">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                            value="option1">
+                        <label class="form-check-label" for="inlineRadio1">Yes</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                            value="option2">
+                        <label class="form-check-label" for="inlineRadio2">No</label>
+                    </div>
+                </div>
+                <div class="mb-3 w-50">
+                    <label for="name" class="form-label">since when?</label>
+                    <select class="form-select" aria-label=".form-select-lg example">
+                        <option selected>6months - 1year</option>
+                        <option value="6months - 1year">6months - 1year</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                        <label class="form-check-label" for="inlineCheckbox1">Shoulders</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                        <label class="form-check-label" for="inlineCheckbox2">Upper arms</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                        <label class="form-check-label" for="inlineCheckbox1">Pelvic area</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                        <label class="form-check-label" for="inlineCheckbox2">Thighs</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                        <label class="form-check-label" for="inlineCheckbox1">Forearm</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                        <label class="form-check-label" for="inlineCheckbox2">Hand</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                        <label class="form-check-label" for="inlineCheckbox1">Lower legs</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                        <label class="form-check-label" for="inlineCheckbox2">Feet</label>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
+        <div class="card mb-5">
+            <div class="card-body">
+                <label for="exampleFormControlInput1" class="form-label">QUESTION 3</label>
+                <h4>Posturally, have you noticed that you have drooping shoulders or your shoulder blades are sticking
+                    out?</h4>
+                <div class="mb-3">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                            value="option1">
+                        <label class="form-check-label" for="inlineRadio1">Yes</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                            value="option2">
+                        <label class="form-check-label" for="inlineRadio2">No</label>
+                    </div>
+                </div>
+                <div class="mb-3 w-50">
+                    <label for="name" class="form-label">since when?</label>
+                    <select class="form-select" aria-label=".form-select-lg example">
+                        <option selected>6months - 1year</option>
+                        <option value="6months - 1year">6months - 1year</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="card mb-5">
+            <div class="card-body">
+                <label for="exampleFormControlInput1" class="form-label">QUESTION 4</label>
+                <h4>Do you experience difficulty in one or more of these activities? </h4>
+                <div class="mb-3">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                        <label class="form-check-label" for="inlineCheckbox1">Running</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                        <label class="form-check-label" for="inlineCheckbox2">Climbing stairs</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                        <label class="form-check-label" for="inlineCheckbox1">Rising from a chair </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                        <label class="form-check-label" for="inlineCheckbox2">Imbalance while sitting</label>
+                    </div>
+                </div>
+                <div class="mb-3 w-50">
+                    <label for="name" class="form-label">since when?</label>
+                    <select class="form-select" aria-label=".form-select-lg example">
+                        <option selected>6months - 1year</option>
+                        <option value="6months - 1year">6months - 1year</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-5">
+            <div class="card-body">
+                <label for="exampleFormControlInput1" class="form-label">QUESTION 5</label>
+                <h4>Are you prone to fractures? </h4>
+                <div class="mb-3">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                            value="option1">
+                        <label class="form-check-label" for="inlineRadio1">Yes</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                            value="option2">
+                        <label class="form-check-label" for="inlineRadio2">No</label>
+                    </div>
+                </div>
+                <div class="mb-3 w-50">
+                    <label for="name" class="form-label">how many in past 1 years?</label>
+                    <select class="form-select" aria-label=".form-select-lg example">
+                        <option selected>3</option>
+                        <option value="3">3</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="card mb-5">
+            <div class="card-body">
+                <label for="exampleFormControlInput1" class="form-label">QUESTION 6</label>
+                <h4>Do you experince burning or prickling sensation that is usually felt in the hands, arms, legs, or
+                    feet? </h4>
+                <div class="mb-3">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                            value="option1">
+                        <label class="form-check-label" for="inlineRadio1">Yes</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                            value="option2">
+                        <label class="form-check-label" for="inlineRadio2">No</label>
+                    </div>
+                </div>
+                <div class="mb-3 w-50">
+                    <label for="name" class="form-label">How often do you experience these?</label>
+                    <select class="form-select" aria-label=".form-select-lg example">
+                        <option selected>3</option>
+                        <option value="3">3</option>
+                    </select>
+                </div>
+                <div class="mb-3 w-50">
+                    <label for="name" class="form-label">Which time of the day?</label>
+                    <select class="form-select" aria-label=".form-select-lg example">
+                        <option selected>3</option>
+                        <option value="3">3</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <button type="button" class="btn btn-outline-primary">Back</button>
+                <button type="button" class="btn btn-primary btn-lg custom-btn">SUBMIT & PROCEED</button>
+            </div>
+        </div>
+    </ng-container>
 </div>
