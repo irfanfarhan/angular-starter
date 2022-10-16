@@ -1,5 +1,6 @@
-import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef, AfterViewInit } from '@angular/core';
-import { FormControl, FormGroup, Validators, NgForm } from '@angular/forms';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-stepper',
@@ -7,20 +8,23 @@ import { FormControl, FormGroup, Validators, NgForm } from '@angular/forms';
   styleUrls: ['./stepper.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class StepperComponent implements OnInit, AfterViewInit {
+export class StepperComponent implements OnInit {
+  basicInfoForm: FormGroup = this.fb.group({});
 
-  constructor(private ref: ChangeDetectorRef) {
-
+  constructor(private route: ActivatedRoute,
+    private router: Router,
+    private fb: FormBuilder,) {
   }
 
   ngOnInit() {
+    this.initialize()
   }
 
-  ngAfterViewInit() {
-    setTimeout(() => {
-      this.ref.detectChanges();
-    }, 100);
-
+  initialize() {
+    this.basicInfoForm = this.fb.group({
+      month: ['', Validators.required],
+      start_date_end_date: ['', Validators.required],
+      title: ['', Validators.required]
+    });
   }
-
 }
