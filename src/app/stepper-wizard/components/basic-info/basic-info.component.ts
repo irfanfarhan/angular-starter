@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-import { COUNTRYLIST, GENDERLIST } from '../../constants/common.constants';
+import { COUNTRYLIST, GENDERLIST, PHONEEXTN } from '../../constants/common.constants';
 
 @Component({
   selector: 'app-basic-info',
@@ -12,6 +12,8 @@ export class BasicInfoComponent implements OnInit {
   basicInfoForm: FormGroup = this.fb.group({});
   countries: any = COUNTRYLIST;
   genderList: any = GENDERLIST;
+  phoneExtnList: any = PHONEEXTN;
+  @Input() finalData: any;
   @Output() submitEvent: EventEmitter<any> = new EventEmitter();
   constructor(private fb: FormBuilder) { }
 
@@ -24,13 +26,16 @@ export class BasicInfoComponent implements OnInit {
       name: ['', Validators.required],
       gender: ['', Validators.required],
       email: ['', Validators.required],
-      ethnicity: ['', Validators.required],
+      ethncty: ['', Validators.required],
       dob: ['', Validators.required],
-      healthcareprovider: ['', Validators.required],
-      country: ['', Validators.required],
+      hcPrvdr: ['', Validators.required],
+      cntryOfResdnc: ['', Validators.required],
       mobileExtn: ['', Validators.required],
       mobile: ['', Validators.required]
     });
+    if (this.finalData?.formData) {
+      this.basicInfoForm.setValue(this.finalData?.formData);
+    }
   }
 
   get form() {
@@ -43,6 +48,6 @@ export class BasicInfoComponent implements OnInit {
       isStep2: 'active',
       isStep3: 'none',
       formData: this.basicInfoForm?.getRawValue()
-    })
+    });
   }
 }

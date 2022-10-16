@@ -22,10 +22,10 @@
     </nav>
 
     <ng-container *ngIf="isStep1 === 'active'">
-        <app-basic-info (submitEvent)="submit($event)"></app-basic-info>
+        <app-basic-info (submitEvent)="submit($event)" [finalData]="finalData"></app-basic-info>
     </ng-container>
     <ng-container *ngIf="isStep2 === 'active'">
-        <app-questions (submitEvent)="submit($event)"></app-questions>
+        <app-questions (submitEvent)="submit($event)" [finalData]="finalData"></app-questions>
     </ng-container>
     <ng-container *ngIf="isStep3 === 'active'">
         <div class="card mb-5">

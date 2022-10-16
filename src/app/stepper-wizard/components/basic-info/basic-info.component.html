@@ -10,10 +10,9 @@
                     </div>
                     <div class="mb-3">
                         <label for="gender" class="form-label">Gender</label>
-                        <select class="form-select" id="gender" formControlName="gender"
-                            placeholder="Select a Gender">
+                        <select class="form-select" id="gender" formControlName="gender" placeholder="Select a Gender">
                             <option value="">Select a Gender</option>
-                            <option *ngFor="let option of genderList" [value]="option">{{option}}</option>
+                            <option *ngFor="let option of genderList" [value]="option?.val">{{option?.gender}}</option>
                         </select>
                     </div>
                     <div class="mb-3">
@@ -22,8 +21,8 @@
                             formControlName="email">
                     </div>
                     <div class="mb-3">
-                        <label for="ethnicity" class="form-label">Ethnicity</label>
-                        <select class="form-select" id="ethnicity" formControlName="ethnicity"
+                        <label for="ethncty" class="form-label">Ethnicity</label>
+                        <select class="form-select" id="ethncty" formControlName="ethncty"
                             placeholder="Select a Ethnicity">
                             <option value="">Select a Ethnicity</option>
                             <option value="Asian American">Asian American</option>
@@ -36,25 +35,25 @@
                         <input type="date" class="form-control" id="dob" formControlName="dob">
                     </div>
                     <div class="mb-3">
-                        <label for="healthcareprovider" class="form-label">Healthcare provider</label>
-                        <input type="text" class="form-control" id="healthcareprovider"
-                            formControlName="healthcareprovider" placeholder="Enter a Healthcare provider">
+                        <label for="hcPrvdr" class="form-label">Healthcare provider</label>
+                        <input type="text" class="form-control" id="hcPrvdr"
+                            formControlName="hcPrvdr" placeholder="Enter a Healthcare provider">
                     </div>
                     <label for="mobile" class="form-label">Mobile</label>
                     <div class="input-group mb-3">
                         <select class="form-select" id="mobile" formControlName="mobileExtn">
-                            <option value="">+1</option>
-                            <option value="+91">+91</option>
+                            <option value="">Select a Extn</option>
+                            <option *ngFor="let option of phoneExtnList" [value]="option?.code">{{option?.code}}
+                            </option>
                         </select>
-                        <input type="text" class="form-control" placeholder="8547123655"
-                            formControlName="mobile">
+                        <input type="text" class="form-control" placeholder="8547123655" formControlName="mobile">
                     </div>
                     <div class="mb-3">
-                        <label for="country" class="form-label">Country of Residence</label>
-                        <select class="form-select" id="country" formControlName="country"
+                        <label for="cntryOfResdnc" class="form-label">Country of Residence</label>
+                        <select class="form-select" id="cntryOfResdnc" formControlName="cntryOfResdnc"
                             placeholder="Select a Country of Residence">
                             <option value="">Select a Country of Residence</option>
-                            <option *ngFor="let option of countries" [value]="option?.code">{{option?.name}}
+                            <option *ngFor="let option of countries" [value]="option?.val">{{option?.country}}
                             </option>
                         </select>
                     </div>
