@@ -1,15 +1,25 @@
-<div class="container my-5">
-    <ul id="progressbar" class="text-center">
-        <li [class]="isStep1" id="step1">
-            <div class="d-none d-md-block"></div>
-        </li>
-        <li id="step2" [class]="isStep2">
-            <div class="d-none d-md-block"></div>
-        </li>
-        <li [class]="isStep3" id="step3">
-            <div class="d-none d-md-block"></div>
-        </li>
-    </ul>
+<div class="container p-0">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-light static-top navbar-fixed-top p-0" style="background: #fff!important">
+        <div class="container p-0">
+            <a class="navbar-brand float-left" href="#">
+                <img src="assets/images/sanofi.png" alt="..." height="">
+            </a>
+            <ul class="steps">
+                <li [class]="isStep1" class="step incomplete">
+                    <span class="step__icon"></span>
+                </li>
+                <li [class]="isStep2" class="step incomplete">
+                    <span class="step__icon"></span>
+                </li>
+                <li [class]="isStep3" class="step incomplete">
+                    <span class="step__icon"></span>
+                </li>
+            </ul>
+            <a class="navbar-brand float-right" href="#">
+                <img src="assets/images/citadel.png" alt="..." height="">
+            </a>
+        </div>
+    </nav>
 
     <ng-container *ngIf="isStep1 === 'active'">
         <app-basic-info (submitEvent)="submit($event)" [finalData]="finalData"></app-basic-info>
