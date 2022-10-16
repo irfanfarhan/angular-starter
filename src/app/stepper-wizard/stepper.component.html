@@ -13,29 +13,32 @@
 
     <div class="card">
         <div class="card-body">
-            <form [formGroup]="basicInfoForm" (submit)="validateBasicInfo()" rule="form" novalidate>
+            <form [formGroup]="basicInfoForm" rule="form" novalidate>
                 <div class="row">
                     <div class="col-6">
                         <div class="mb-3">
                             <label for="name" class="form-label">Name</label>
-                            <input type="text" class="form-control" id="name" formControlName="month">
+                            <input type="text" class="form-control" id="name" formControlName="name"
+                                placeholder="Enter a Name">
                         </div>
                         <div class="mb-3">
                             <label for="gender" class="form-label">Gender</label>
-                            <select class="form-select" id="gender" formControlName="month">
-                                <option selected>Male</option>
-                                <option value="Male">Male</option>
-                                <option value="Female">Female</option>
+                            <select class="form-select" id="gender" formControlName="gender"
+                                placeholder="Select a Gender">
+                                <option value="">Select a Gender</option>
+                                <option *ngFor="let option of genderList" [value]="option">{{option}}</option>
                             </select>
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label">E-mail</label>
-                            <input type="email" class="form-control" id="email" placeholder="name@example.com" formControlName="month">
+                            <input type="email" class="form-control" id="email" placeholder="name@example.com"
+                                formControlName="email">
                         </div>
                         <div class="mb-3">
                             <label for="ethnicity" class="form-label">Ethnicity</label>
-                            <select class="form-select" id="ethnicity" formControlName="month">
-                                <option selected>Asian American</option>
+                            <select class="form-select" id="ethnicity" formControlName="ethnicity"
+                                placeholder="Select a Ethnicity">
+                                <option value="">Select a Ethnicity</option>
                                 <option value="Asian American">Asian American</option>
                             </select>
                         </div>
@@ -43,11 +46,12 @@
                     <div class="col-6">
                         <div class="mb-3">
                             <label for="dob" class="form-label">Date of birth(mm/dd/yyyy)</label>
-                            <input type="date" class="form-control" id="dob" formControlName="month">
+                            <input type="date" class="form-control" id="dob" formControlName="dob">
                         </div>
                         <div class="mb-3">
                             <label for="healthcareprovider" class="form-label">Healthcare provider</label>
-                            <input type="text" class="form-control" id="healthcareprovider" formControlName="month">
+                            <input type="text" class="form-control" id="healthcareprovider"
+                                formControlName="healthcareprovider" placeholder="Enter a Healthcare provider">
                         </div>
                         <label for="mobile" class="form-label">Mobile</label>
                         <div class="input-group mb-3">
@@ -56,9 +60,11 @@
                         </div>
                         <div class="mb-3">
                             <label for="country" class="form-label">Country of Residence</label>
-                            <select class="form-select" id="country" formControlName="month">
-                                <option selected>United States of America</option>
-                                <option value="USA">United States of America</option>
+                            <select class="form-select" id="country" formControlName="country"
+                                placeholder="Select a Country of Residence">
+                                <option value="">Select a Country of Residence</option>
+                                <option *ngFor="let option of countries" [value]="option?.code">{{option?.name}}
+                                </option>
                             </select>
                         </div>
                     </div>
@@ -68,7 +74,8 @@
     </div>
     <div class="row mt-5">
         <div class="d-grid gap-2 col-4 mx-auto">
-            <button type="button" class="btn btn-primary btn-lg custom-btn">SUBMIT & PROCEED</button>
+            <button type="button" class="btn btn-primary btn-lg custom-btn" [disabled]="basicInfoForm.invalid"
+                (click)="submit()">SUBMIT & PROCEED</button>
         </div>
     </div>
 </div>

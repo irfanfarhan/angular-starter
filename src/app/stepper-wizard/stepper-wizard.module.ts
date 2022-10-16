@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 import { StepperWizardRoutingModule } from './stepper-wizard-routing.module';
 import { StepperComponent } from './stepper.component';
-
+import { SharedModule } from '../shared/shared.module';
 
 export const uiComponents = [
   StepperComponent
@@ -17,7 +16,7 @@ export const uiComponents = [
     ...uiComponents
   ],
   imports: [
-    CommonModule,
+    SharedModule,
     StepperWizardRoutingModule
   ]
 })
