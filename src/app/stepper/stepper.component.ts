@@ -1,15 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef, AfterViewInit } from '@angular/core';
+import { FormControl, FormGroup, Validators, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-stepper',
   templateUrl: './stepper.component.html',
-  styleUrls: ['./stepper.component.scss']
+  styleUrls: ['./stepper.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class StepperComponent implements OnInit {
+export class StepperComponent implements OnInit, AfterViewInit {
 
-  constructor() { }
+  constructor(private ref: ChangeDetectorRef) {
 
-  ngOnInit(): void {
+  }
+
+  ngOnInit() {
+  }
+
+  ngAfterViewInit() {
+    setTimeout(() => {
+      this.ref.detectChanges();
+    }, 100);
+
   }
 
 }
