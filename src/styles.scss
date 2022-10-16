@@ -3,3 +3,22 @@
 /* Importing Bootstrap SCSS file. */
 @import '../node_modules/angular-archwizard/styles/archwizard.css';
 
+.sonofi-btn {
+    border-radius: 3rem !important;
+    background-color: #673ab7 !important;
+    font-size: 1rem !important;
+    font-weight: 500 !important;
+    padding: 15px 100px!important;
+}
+.sonofi-btn-secondary {
+    border-radius: 3rem !important;
+    background-color: #f8f5fe !important;
+    font-size: 1rem !important;
+    font-weight: 500 !important;
+    padding: 15px 100px!important;
+    color: #7a17e6
+}
+
+.sonofi-btn-secondary:hover {
+    color: #7a17e6
+}

@@ -28,6 +28,7 @@
     "angular-archwizard": "^7.0.0",
     "angular-calendar": "latest",
     "bootstrap": "^5.2.2",
+    "font-awesome": "^4.7.0",
     "ng-bootstrap": "^1.6.3",
     "rxjs": "7.5.7",
     "tslib": "2.4.0",
