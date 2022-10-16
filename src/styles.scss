@@ -1,7 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 @import "bootstrap/scss/bootstrap";
 /* Importing Bootstrap SCSS file. */
-
+body{
+    padding-top: 120px;
+}
 .sonofi-btn {
     border-radius: 3rem !important;
     background-color: #673ab7 !important;
