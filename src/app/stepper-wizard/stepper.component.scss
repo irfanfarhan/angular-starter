@@ -115,7 +115,7 @@
 /* Component Styles - Steps */
 .steps {
     display: flex;
-    width: 100%;
+    width: 20rem;
     margin: 0;
     list-style: none;
   }
@@ -187,6 +187,8 @@
     display: block;
     color: #fff;
     content: "✓";
+    font-size: 18px;
+    font-weight: bold;
   }
   .active .step__icon:before {
     display: block;

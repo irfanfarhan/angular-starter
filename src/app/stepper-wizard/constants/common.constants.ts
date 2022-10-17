@@ -1964,3 +1964,129 @@ export const CRITERIALIST = [
     '1 - 5 years',
     '>5 years'
 ];
+
+export const DEMOGRAPHICS = [
+    {
+        "cde": "name",
+        "text": "Name"
+    },
+    {
+        "cde": "dob",
+        "text": "Date of Birth (mm/dd/yyyy)"
+    },
+    {
+        "cde": "gender",
+        "text": "Gender"
+    },
+    {
+        "cde": "hcPrvdr",
+        "text": "Health Care Provider"
+    },
+    {
+        "cde": "email",
+        "text": "Email"
+    },
+    {
+        "cde": "mobile",
+        "text": "Mobile"
+    },
+    {
+        "cde": "mobileExtn",
+        "text": "Mobile Extn"
+    },
+    {
+        "cde": "ethncty",
+        "text": "Ethinicity"
+    },
+    {
+        "cde": "cntryOfResdnc",
+        "text": "Country of Residence"
+    }
+];
+
+export const SYMPTOMQUESTIONS = {
+    "symptom1": "Musculoskeletal Symptoms",
+    "musculoskeletalCategories": [
+        {
+            "id": 1,
+            "category": "Dyspnea during excercise",
+            "q1": "Q1",
+            "q1text": "Do you experience extreme fatigue/intolerence while exercising?",
+            "q2": "Q2",
+            "q2text": "If you have answered this question 'Yes', since when?",
+            "q1val": "",
+            "q2val": "",
+            "list": [],
+            "subText": 'since when?'
+        },
+        {
+            "id": 2,
+            "category": "Myalgia",
+            "q1": "Q3",
+            "q1text": "Do you experience frequent muscle pain or muscle cramps?",
+            "q2": "Q4",
+            "q2text": "If you have answered this question 'Yes', since when?",
+            "q1val": "",
+            "q2val": "",
+            "list": [],
+            "subText": 'since when?'
+        },
+        {
+            "id": 3,
+            "category": "Myalgia",
+            "q1": "Q6",
+            "q1text": "Do you often experience weakness in arms and legs?",
+            "q2": "Q6",
+            "q2text": "If you have answered this question 'Yes', since when?",
+            "q1val": "",
+            "q2val": "",
+            "list": [],
+            "subText": 'since when?'
+        },
+        {
+            "id": 4,
+            "category": "Fatigue",
+            "q1": "Q14",
+            "q1text": "Do you experience difficulty in one or more of these activities?",
+            "q2": "Q15",
+            "q2text": "If you have answered this question 'Yes', since when?",
+            "q1val": "",
+            "q2val": "",
+            "list": [
+                {
+                    title: 'Running',
+                    checked: false,
+                }, {
+                    title: 'Walking',
+                    checked: false,
+                },
+                {
+                    title: 'Climbing Stairs',
+                    checked: false,
+                },
+                {
+                    title: 'Rising from a chair',
+                    checked: false,
+                },
+                {
+                    title: 'Imbalance while sitting',
+                    checked: false,
+                }],
+            "subText": 'since when?'
+        }
+    ],
+    "symptom2": "Skeletal Symptoms",
+    "skeletalCategories": [
+        {
+            "id": 5,
+            "category": "",
+            "q1": "Q43",
+            "q1text": "Are you prone to fractures?",
+            "q2": "Q44",
+            "q2text": "If you have answered this question 'Yes', since when?",
+            "q1val": "",
+            "q2val": "",
+            "subText": 'how many in past 1 years?'
+        }
+    ]
+};
